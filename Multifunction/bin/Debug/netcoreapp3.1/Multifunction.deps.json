@@ -8,12 +8,22 @@
     ".NETCoreApp,Version=v3.1": {
       "Multifunction/1.0.0": {
         "dependencies": {
+          "CircularProgressBar": "2.8.0.16",
           "LibVLCSharp": "3.6.1",
           "LibVLCSharp.WinForms": "3.6.1",
-          "VideoLAN.LibVLC.Windows": "3.0.16"
+          "VideoLAN.LibVLC.Windows": "3.0.16",
+          "WinFormAnimation": "1.6.0.4"
         },
         "runtime": {
           "Multifunction.dll": {}
+        }
+      },
+      "CircularProgressBar/2.8.0.16": {
+        "runtime": {
+          "lib/net40/CircularProgressBar.dll": {
+            "assemblyVersion": "2.8.0.16",
+            "fileVersion": "2.8.0.16"
+          }
         }
       },
       "LibVLCSharp/3.6.1": {
@@ -35,7 +45,15 @@
           }
         }
       },
-      "VideoLAN.LibVLC.Windows/3.0.16": {}
+      "VideoLAN.LibVLC.Windows/3.0.16": {},
+      "WinFormAnimation/1.6.0.4": {
+        "runtime": {
+          "lib/net40/WinFormAnimation.dll": {
+            "assemblyVersion": "1.6.0.4",
+            "fileVersion": "1.6.0.4"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -43,6 +61,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "CircularProgressBar/2.8.0.16": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-P31wJxwTcQ2mA7wB4X+tnc9QlfSNyPzEOyt3qjf2/6cLLi8mERAfEwNcgt3Qv38/Xiyreo/nVYDe2zIVEv4SQw==",
+      "path": "circularprogressbar/2.8.0.16",
+      "hashPath": "circularprogressbar.2.8.0.16.nupkg.sha512"
     },
     "LibVLCSharp/3.6.1": {
       "type": "package",
@@ -64,6 +89,13 @@
       "sha512": "sha512-2os7EGuroQnZxYzhiUWRcg3CcCII9xwMT1sOYsh32o9YSKwYirk+vf3MkcmQX4nHhUSRu6Gt3GG1pVSry6N5PA==",
       "path": "videolan.libvlc.windows/3.0.16",
       "hashPath": "videolan.libvlc.windows.3.0.16.nupkg.sha512"
+    },
+    "WinFormAnimation/1.6.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YSic50luSCgFq+JejHBq5DKwxpNP1VH7uOyBXC+8v6dd+CuUYGlKSOL4EbwT1WeWJQvFBoDMqHnq7HsF95kxrw==",
+      "path": "winformanimation/1.6.0.4",
+      "hashPath": "winformanimation.1.6.0.4.nupkg.sha512"
     }
   }
 }

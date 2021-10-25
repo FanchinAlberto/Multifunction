@@ -44,6 +44,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "CircularProgressBar": {
+              "target": "Package",
+              "version": "[2.8.0.16, )"
+            },
             "LibVLCSharp": {
               "target": "Package",
               "version": "[3.6.1, )"
@@ -55,6 +59,10 @@
             "VideoLAN.LibVLC.Windows": {
               "target": "Package",
               "version": "[3.0.16, )"
+            },
+            "WinFormAnimation": {
+              "target": "Package",
+              "version": "[1.6.0.4, )"
             }
           },
           "imports": [

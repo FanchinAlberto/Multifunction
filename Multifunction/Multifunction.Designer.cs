@@ -48,7 +48,7 @@ namespace Multifunction
             this.ptbLogo = new System.Windows.Forms.PictureBox();
             this.panelBack1 = new System.Windows.Forms.Panel();
             this.lblProject = new System.Windows.Forms.Label();
-            this.tabMusic = new System.Windows.Forms.TabPage();
+            this.tabVideo = new System.Windows.Forms.TabPage();
             this.videoView1 = new LibVLCSharp.WinForms.VideoView();
             this.pnlBack2 = new System.Windows.Forms.Panel();
             this.btnRiproduci = new System.Windows.Forms.Button();
@@ -60,7 +60,7 @@ namespace Multifunction
             this.btnBck = new System.Windows.Forms.Button();
             this.btnPsPl = new System.Windows.Forms.Button();
             this.btnPlayMusic = new System.Windows.Forms.Button();
-            this.tabVideo = new System.Windows.Forms.TabPage();
+            this.tabMusica = new System.Windows.Forms.TabPage();
             this.videoView3 = new LibVLCSharp.WinForms.VideoView();
             this.videoView2 = new LibVLCSharp.WinForms.VideoView();
             this.pnlBack4 = new System.Windows.Forms.Panel();
@@ -75,17 +75,18 @@ namespace Multifunction
             this.tabChrono = new System.Windows.Forms.TabPage();
             this.pnlBack5 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.progBarCircle = new CircularProgressBar.CircularProgressBar();
             this.pnlMenuLaterale.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).BeginInit();
             this.panelBack1.SuspendLayout();
-            this.tabMusic.SuspendLayout();
+            this.tabVideo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.videoView1)).BeginInit();
             this.pnlBack2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            this.tabVideo.SuspendLayout();
+            this.tabMusica.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.videoView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videoView2)).BeginInit();
             this.pnlBack4.SuspendLayout();
@@ -248,8 +249,8 @@ namespace Multifunction
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabHome);
-            this.tabControl.Controls.Add(this.tabMusic);
             this.tabControl.Controls.Add(this.tabVideo);
+            this.tabControl.Controls.Add(this.tabMusica);
             this.tabControl.Controls.Add(this.tabChrono);
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
@@ -313,26 +314,27 @@ namespace Multifunction
             this.lblProject.Text = "Fanchin Alberto 4 CII 17/10/2021";
             this.lblProject.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tabMusic
+            // tabVideo
             // 
-            this.tabMusic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.tabMusic.Controls.Add(this.videoView1);
-            this.tabMusic.Controls.Add(this.pnlBack2);
-            this.tabMusic.Location = new System.Drawing.Point(4, 24);
-            this.tabMusic.Name = "tabMusic";
-            this.tabMusic.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMusic.Size = new System.Drawing.Size(620, 569);
-            this.tabMusic.TabIndex = 1;
-            this.tabMusic.Text = "tabPage2";
-            this.tabMusic.Click += new System.EventHandler(this.tabMusic_Click);
+            this.tabVideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.tabVideo.Controls.Add(this.videoView1);
+            this.tabVideo.Controls.Add(this.pnlBack2);
+            this.tabVideo.Location = new System.Drawing.Point(4, 24);
+            this.tabVideo.Name = "tabVideo";
+            this.tabVideo.Padding = new System.Windows.Forms.Padding(3);
+            this.tabVideo.Size = new System.Drawing.Size(620, 569);
+            this.tabVideo.TabIndex = 1;
+            this.tabVideo.Text = "tabPage2";
+            this.tabVideo.Click += new System.EventHandler(this.tabMusic_Click);
             // 
             // videoView1
             // 
             this.videoView1.BackColor = System.Drawing.Color.Black;
-            this.videoView1.Location = new System.Drawing.Point(4, 3);
+            this.videoView1.Location = new System.Drawing.Point(3, 3);
+            this.videoView1.Margin = new System.Windows.Forms.Padding(0);
             this.videoView1.MediaPlayer = null;
             this.videoView1.Name = "videoView1";
-            this.videoView1.Size = new System.Drawing.Size(613, 457);
+            this.videoView1.Size = new System.Drawing.Size(614, 463);
             this.videoView1.TabIndex = 2;
             this.videoView1.Text = "videoView1";
             // 
@@ -455,18 +457,18 @@ namespace Multifunction
             this.btnPlayMusic.UseVisualStyleBackColor = false;
             this.btnPlayMusic.Click += new System.EventHandler(this.btnPlayMusic_Click);
             // 
-            // tabVideo
+            // tabMusica
             // 
-            this.tabVideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            this.tabVideo.Controls.Add(this.videoView3);
-            this.tabVideo.Controls.Add(this.videoView2);
-            this.tabVideo.Controls.Add(this.pnlBack4);
-            this.tabVideo.Location = new System.Drawing.Point(4, 24);
-            this.tabVideo.Name = "tabVideo";
-            this.tabVideo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVideo.Size = new System.Drawing.Size(620, 569);
-            this.tabVideo.TabIndex = 2;
-            this.tabVideo.Text = "tabPage3";
+            this.tabMusica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.tabMusica.Controls.Add(this.videoView3);
+            this.tabMusica.Controls.Add(this.videoView2);
+            this.tabMusica.Controls.Add(this.pnlBack4);
+            this.tabMusica.Location = new System.Drawing.Point(4, 24);
+            this.tabMusica.Name = "tabMusica";
+            this.tabMusica.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMusica.Size = new System.Drawing.Size(620, 569);
+            this.tabMusica.TabIndex = 2;
+            this.tabMusica.Text = "tabPage3";
             // 
             // videoView3
             // 
@@ -482,10 +484,10 @@ namespace Multifunction
             // videoView2
             // 
             this.videoView2.BackColor = System.Drawing.Color.Black;
-            this.videoView2.Location = new System.Drawing.Point(2, 3);
+            this.videoView2.Location = new System.Drawing.Point(2, 4);
             this.videoView2.MediaPlayer = null;
             this.videoView2.Name = "videoView2";
-            this.videoView2.Size = new System.Drawing.Size(613, 460);
+            this.videoView2.Size = new System.Drawing.Size(613, 459);
             this.videoView2.TabIndex = 2;
             this.videoView2.Text = "videoView2";
             // 
@@ -598,6 +600,7 @@ namespace Multifunction
             // tabChrono
             // 
             this.tabChrono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.tabChrono.Controls.Add(this.progBarCircle);
             this.tabChrono.Controls.Add(this.pnlBack5);
             this.tabChrono.Location = new System.Drawing.Point(4, 24);
             this.tabChrono.Name = "tabChrono";
@@ -619,6 +622,38 @@ namespace Multifunction
             // 
             this.timer1.Interval = 1000;
             // 
+            // progBarCircle
+            // 
+            this.progBarCircle.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.progBarCircle.AnimationSpeed = 500;
+            this.progBarCircle.BackColor = System.Drawing.Color.Transparent;
+            this.progBarCircle.Font = new System.Drawing.Font("Segoe UI", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.progBarCircle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(74)))), ((int)(((byte)(97)))));
+            this.progBarCircle.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.progBarCircle.InnerMargin = 2;
+            this.progBarCircle.InnerWidth = -1;
+            this.progBarCircle.Location = new System.Drawing.Point(166, 76);
+            this.progBarCircle.MarqueeAnimationSpeed = 2000;
+            this.progBarCircle.Name = "progBarCircle";
+            this.progBarCircle.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.progBarCircle.OuterMargin = -25;
+            this.progBarCircle.OuterWidth = 26;
+            this.progBarCircle.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(74)))), ((int)(((byte)(97)))));
+            this.progBarCircle.ProgressWidth = 25;
+            this.progBarCircle.SecondaryFont = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.progBarCircle.Size = new System.Drawing.Size(320, 320);
+            this.progBarCircle.StartAngle = 270;
+            this.progBarCircle.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.progBarCircle.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.progBarCircle.SubscriptText = "";
+            this.progBarCircle.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.progBarCircle.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.progBarCircle.SuperscriptText = "";
+            this.progBarCircle.TabIndex = 2;
+            this.progBarCircle.Text = "sas";
+            this.progBarCircle.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.progBarCircle.Value = 68;
+            // 
             // Multifunction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -636,12 +671,12 @@ namespace Multifunction
             this.tabHome.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).EndInit();
             this.panelBack1.ResumeLayout(false);
-            this.tabMusic.ResumeLayout(false);
+            this.tabVideo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.videoView1)).EndInit();
             this.pnlBack2.ResumeLayout(false);
             this.pnlBack2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            this.tabVideo.ResumeLayout(false);
+            this.tabMusica.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.videoView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.videoView2)).EndInit();
             this.pnlBack4.ResumeLayout(false);
@@ -665,9 +700,9 @@ namespace Multifunction
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabP;
         private System.Windows.Forms.Panel panelBack1;
-        private System.Windows.Forms.TabPage tabMusic;
-        private System.Windows.Forms.Panel pnlBack2;
         private System.Windows.Forms.TabPage tabVideo;
+        private System.Windows.Forms.Panel pnlBack2;
+        private System.Windows.Forms.TabPage tabMusica;
         private System.Windows.Forms.TabPage tabChrono;
         private System.Windows.Forms.TabPage tabHomj;
         private System.Windows.Forms.Label lblTitle1;
@@ -704,6 +739,7 @@ namespace Multifunction
         private System.Windows.Forms.Button btnRiproduci2;
         private System.Windows.Forms.Label lblVolume2;
         private System.Windows.Forms.TrackBar trackBar2;
+        private CircularProgressBar.CircularProgressBar progBarCircle;
     }
 }
 

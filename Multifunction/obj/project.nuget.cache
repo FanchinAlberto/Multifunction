@@ -1,12 +1,35 @@
 {
   "version": 2,
-  "dgSpecHash": "szIY6oFKlisyphHdmWJfkP+j0JgKsp4wh9gmjQasraQSmHyxFzuuZ8CkmfvrEFW3uF6PI1y7Z+93ycsz8dY6bA==",
+  "dgSpecHash": "cH/VkDAOfbMgGdt9TQ8I645gwDsggW2kLw06mDRR70ZDH9Vug0QRODgLzt9NCfZ8Tvvv8WuuwPNluLJY/gHQOw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Alberto\\source\\repos\\Multifunction\\Multifunction\\Multifunction.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Alberto\\.nuget\\packages\\circularprogressbar\\2.8.0.16\\circularprogressbar.2.8.0.16.nupkg.sha512",
     "C:\\Users\\Alberto\\.nuget\\packages\\libvlcsharp\\3.6.1\\libvlcsharp.3.6.1.nupkg.sha512",
     "C:\\Users\\Alberto\\.nuget\\packages\\libvlcsharp.winforms\\3.6.1\\libvlcsharp.winforms.3.6.1.nupkg.sha512",
-    "C:\\Users\\Alberto\\.nuget\\packages\\videolan.libvlc.windows\\3.0.16\\videolan.libvlc.windows.3.0.16.nupkg.sha512"
+    "C:\\Users\\Alberto\\.nuget\\packages\\videolan.libvlc.windows\\3.0.16\\videolan.libvlc.windows.3.0.16.nupkg.sha512",
+    "C:\\Users\\Alberto\\.nuget\\packages\\winformanimation\\1.6.0.4\\winformanimation.1.6.0.4.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Il pacchetto 'CircularProgressBar 2.8.0.16' è stato ripristinato mediante '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' e non mediante il framework di destinazione del progetto '.NETCoreApp,Version=v3.1'. Questo pacchetto potrebbe non essere completamente compatibile con il progetto.",
+      "libraryId": "CircularProgressBar",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Il pacchetto 'WinFormAnimation 1.6.0.4' è stato ripristinato mediante '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' e non mediante il framework di destinazione del progetto '.NETCoreApp,Version=v3.1'. Questo pacchetto potrebbe non essere completamente compatibile con il progetto.",
+      "libraryId": "WinFormAnimation",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

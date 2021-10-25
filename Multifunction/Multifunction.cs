@@ -38,7 +38,7 @@ namespace Multifunction
         public OpenFileDialog ofd = new OpenFileDialog();
         public OpenFileDialog ofd2 = new OpenFileDialog();
 
-
+        
         public Multifunction()
         {
             InitializeComponent();
@@ -67,14 +67,15 @@ namespace Multifunction
             trackBar2.Value = _mp3.Volume;
             lblVolume2.Text = Convert.ToString(trackBar2.Value) + "%";
 
+            progBarCircle.Value = 0;
+            progBarCircle.Text = "0";
+
+
+
         }
 
         public void ShortcutEvent(object sender, KeyEventArgs e)
         {
-
-           
-             
-            
 
             if (e.KeyCode == Keys.Escape && isFullscreen) // implemento il tasto esc per uscire dal fullscreen
             {
@@ -85,6 +86,8 @@ namespace Multifunction
                 videoView1.Size = oldVideoSize; 
                 videoView1.Location = oldVideoLocation; 
                 isFullscreen = false;
+                pnlMenuLaterale.Visible = true;
+                pnlBack2.Visible = true;
             }
 
             if (isPlaying) 
@@ -146,7 +149,7 @@ namespace Multifunction
         }
         private void Multifunction_Load(object sender, EventArgs e)
         {
-
+            timer1.Start();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -199,8 +202,8 @@ namespace Multifunction
             pnlBack4.BackColor = Color.FromArgb(238, 248, 244);
             pnlBack5.BackColor = Color.FromArgb(238, 248, 244);
             tabHome.BackColor = Color.FromArgb(203,203,203);
-            tabMusic.BackColor = Color.FromArgb(203, 203, 203);
             tabVideo.BackColor = Color.FromArgb(203, 203, 203);
+            tabMusica.BackColor = Color.FromArgb(203, 203, 203);
             tabChrono.BackColor = Color.FromArgb(203, 203, 203);
             button1.BackColor = Color.FromArgb(203, 203, 203);
             button2.BackColor = Color.FromArgb(203, 203, 203);
@@ -234,8 +237,8 @@ namespace Multifunction
             pnlBack4.BackColor = Color.FromArgb(59,2,31);
             pnlBack5.BackColor = Color.FromArgb(59,2,31);
             tabHome.BackColor = Color.FromArgb(158, 73, 116);
-            tabMusic.BackColor = Color.FromArgb( 158,73,116);
             tabVideo.BackColor = Color.FromArgb( 158,73,116);
+            tabMusica.BackColor = Color.FromArgb( 158,73,116);
             tabChrono.BackColor = Color.FromArgb( 158,73,116);
             button1.BackColor = Color.FromArgb( 158,73,116);
             button2.BackColor = Color.FromArgb( 158,73,116);
@@ -262,8 +265,8 @@ namespace Multifunction
             pnlBack4.BackColor = Color.FromArgb(11,7,17);
             pnlBack5.BackColor = Color.FromArgb(11,7,17);
             tabHome.BackColor = Color.FromArgb(52, 52, 52);
-            tabMusic.BackColor = Color.FromArgb(52,52,52);
             tabVideo.BackColor = Color.FromArgb(52,52,52);
+            tabMusica.BackColor = Color.FromArgb(52,52,52);
             tabChrono.BackColor = Color.FromArgb(52,52,52);
             button1.BackColor = Color.FromArgb(52,52,52);
             button2.BackColor = Color.FromArgb(52,52,52);
@@ -314,12 +317,12 @@ namespace Multifunction
             if (_mp.State == VLCState.Playing) // if is playing
             {
                 _mp.Pause(); // pause
-                this.timer1.Stop();
+                
             }
             else // it's not playing?
             {
                 _mp.Play(); // play
-                this.timer1.Start();
+                
             }
 
 
@@ -327,11 +330,17 @@ namespace Multifunction
 
         private void btnFullScreen_Click(object sender, EventArgs e)
         {
-            videoView1.Size = this.Size; //setto il video alla stessa size del form
-            videoView1.Location = new Point(0, 0); // rimuovo l'offset del video
-            this.FormBorderStyle = FormBorderStyle.None; // rimuovo i bordi
-            this.WindowState = FormWindowState.Maximized; // metto il form in fullscreen
+           
+             // make video the same size as the form
+            videoView1.Location = new Point(0, 0); // remove the offset
+            this.FormBorderStyle = FormBorderStyle.None; // change form style
+            this.WindowState = FormWindowState.Maximized;
+            tabVideo.Size = this.Size;
+            videoView1.Size = tabVideo.Size;
+            videoView1.Dock = DockStyle.Fill;
+            pnlBack2.Visible = false;
             isFullscreen = true;
+            pnlMenuLaterale.Visible = false;
         }
 
         private void btnBck_Click(object sender, EventArgs e)
@@ -347,21 +356,20 @@ namespace Multifunction
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(progressBar1.Value > 100)
-            {
-                progressBar1.Value += 1;
+            progBarCircle.Value += 1;
+            progBarCircle.Text = progBarCircle.Value.ToString();
+            progBarCircle.Maximum = 60;
 
-            }
-            else
+            if (progBarCircle.Value == 60)
             {
-                timer1.Stop();
+                progBarCircle.Value = 0;
             }
         }
 
         private void btnRiproduci_Click(object sender, EventArgs e)
         {
             PlayFile(ofd.FileName);
-            timer1.Start();
+            
             progressBar1.Maximum = (int)_mp.Length / 1000;
         }
 
@@ -381,12 +389,12 @@ namespace Multifunction
             if (_mp3.State == VLCState.Playing) // if is playing
             {
                 _mp3.Pause(); // pause
-                this.timer1.Stop();
+                
             }
             else // it's not playing?
             {
                 _mp3.Play(); // play
-                this.timer1.Start();
+                
             }
         }
 
