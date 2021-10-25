@@ -545,6 +545,7 @@ namespace Multifunction
             this.btnFw2.TabIndex = 5;
             this.btnFw2.Text = "5 sec >";
             this.btnFw2.UseVisualStyleBackColor = false;
+            this.btnFw2.Click += new System.EventHandler(this.btnFw2_Click);
             // 
             // btnBck2
             // 
@@ -556,6 +557,7 @@ namespace Multifunction
             this.btnBck2.TabIndex = 4;
             this.btnBck2.Text = "< 5 sec";
             this.btnBck2.UseVisualStyleBackColor = false;
+            this.btnBck2.Click += new System.EventHandler(this.btnBck2_Click);
             // 
             // btnPsPl2
             // 

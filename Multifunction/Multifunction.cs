@@ -322,7 +322,7 @@ namespace Multifunction
                 this.timer1.Start();
             }
 
-            
+
         }
 
         private void btnFullScreen_Click(object sender, EventArgs e)
@@ -394,6 +394,16 @@ namespace Multifunction
         {
             _mp3.Volume = trackBar2.Value;
             lblVolume2.Text = Convert.ToString(trackBar2.Value) + "%";
+        }
+
+        private void btnBck2_Click(object sender, EventArgs e)
+        {
+            _mp3.Position -= 0.05f;
+        }
+
+        private void btnFw2_Click(object sender, EventArgs e)
+        {
+            _mp3.Position += 0.05f;
         }
     }
 }
