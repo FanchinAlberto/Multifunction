@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "szIY6oFKlisyphHdmWJfkP+j0JgKsp4wh9gmjQasraQSmHyxFzuuZ8CkmfvrEFW3uF6PI1y7Z+93ycsz8dY6bA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Alberto\\source\\repos\\Multifunction\\Multifunction\\Multifunction.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Alberto\\.nuget\\packages\\libvlcsharp\\3.6.1\\libvlcsharp.3.6.1.nupkg.sha512",
+    "C:\\Users\\Alberto\\.nuget\\packages\\libvlcsharp.winforms\\3.6.1\\libvlcsharp.winforms.3.6.1.nupkg.sha512",
+    "C:\\Users\\Alberto\\.nuget\\packages\\videolan.libvlc.windows\\3.0.16\\videolan.libvlc.windows.3.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}
