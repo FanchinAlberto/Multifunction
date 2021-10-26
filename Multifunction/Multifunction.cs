@@ -38,6 +38,8 @@ namespace Multifunction
         public OpenFileDialog ofd = new OpenFileDialog();
         public OpenFileDialog ofd2 = new OpenFileDialog();
 
+        public string[] nomeMedia = new string[2];
+
         
         public Multifunction()
         {
@@ -171,15 +173,15 @@ namespace Multifunction
         {
             tabControl.SelectedIndex = 3;
         }
-
+        public int durata1 = 0;
         private void btnPlayMusic_Click(object sender, EventArgs e)
         {
-             // apro un openfiledialog in modo che l'utente possa scegliere il file da riprodurre
-            
-            
-                
+            // apro un openfiledialog in modo che l'utente possa scegliere il file da riprodurre
+
             
             ofd.ShowDialog();
+
+            nomeMedia[0] = ofd.FileName.ToString();
 
 
         }
@@ -220,6 +222,27 @@ namespace Multifunction
             pnlLogo.BackgroundImage = Properties.Resources.logo3;
             this.BackColor = Color.FromArgb(238, 248, 244);
             tabControl.BackColor = Color.FromArgb(238, 248, 244);
+
+            btnPlayMusic.BackColor = Color.FromArgb(203, 203, 203);
+            btnRiproduci.BackColor = Color.FromArgb(203, 203, 203);
+            btnPsPl.BackColor = Color.FromArgb(203, 203, 203);
+            btnBck.BackColor = Color.FromArgb(203, 203, 203);
+            btnFwd.BackColor = Color.FromArgb(203, 203, 203);
+            btnFullScreen.BackColor = Color.FromArgb(203, 203, 203);
+            button3.BackColor = Color.FromArgb(203, 203, 203);
+            btnRiproduci2.BackColor = Color.FromArgb(203, 203, 203);
+            btnPsPl2.BackColor = Color.FromArgb(203, 203, 203);
+            btnBck2.BackColor = Color.FromArgb(203, 203, 203);
+            btnFw2.BackColor = Color.FromArgb(203, 203, 203);
+
+
+
+            progBarCircle.BackColor = Color.FromArgb(203, 203, 203);
+            progBarCircle.ProgressColor = Color.FromArgb(41, 181, 158);
+            progBarCircle.InnerColor = Color.FromArgb(203, 203, 203);
+            progBarCircle.OuterColor = Color.FromArgb(203, 203, 203);
+            progBarCircle.ForeColor = Color.FromArgb(41, 181, 158);
+            lblOre.ForeColor = Color.FromArgb(41, 181, 158);
         }
 
         private void btnTheme_Click(object sender, EventArgs e)
@@ -255,6 +278,25 @@ namespace Multifunction
             pnlLogo.BackgroundImage = Properties.Resources.logo2;
             this.BackColor = Color.FromArgb(59,2,31);
             tabControl.BackColor = Color.FromArgb(59,2,31);
+
+            btnPlayMusic.BackColor = Color.FromArgb(158, 73, 116);
+            btnRiproduci.BackColor = Color.FromArgb(158, 73, 116);
+            btnPsPl.BackColor = Color.FromArgb(158, 73, 116);
+            btnBck.BackColor = Color.FromArgb(158, 73, 116);
+            btnFwd.BackColor = Color.FromArgb(158, 73, 116);
+            btnFullScreen.BackColor = Color.FromArgb(158, 73, 116);
+            button3.BackColor = Color.FromArgb(158, 73, 116);
+            btnRiproduci2.BackColor = Color.FromArgb(158, 73, 116);
+            btnPsPl2.BackColor = Color.FromArgb(158, 73, 116);
+            btnBck2.BackColor = Color.FromArgb(158, 73, 116);
+            btnFw2.BackColor = Color.FromArgb(158, 73, 116);
+
+            progBarCircle.BackColor = Color.FromArgb(158, 73, 116);
+            progBarCircle.ProgressColor = Color.FromArgb(0,0,0);
+            progBarCircle.InnerColor = Color.FromArgb(158, 73, 116);
+            progBarCircle.OuterColor = Color.FromArgb(158, 73, 116);
+            progBarCircle.ForeColor = Color.FromArgb(0,0,0);
+            lblOre.ForeColor = Color.FromArgb(0,0,0);
         }
 
         private void btnNero_Click(object sender, EventArgs e)
@@ -283,6 +325,27 @@ namespace Multifunction
             pnlLogo.BackgroundImage = Properties.Resources.logo;
             this.BackColor = Color.FromArgb(11,7,17);
             tabControl.BackColor = Color.FromArgb(11,7,17);
+
+
+            btnPlayMusic.BackColor = Color.FromArgb(52,52,52);
+            btnRiproduci.BackColor = Color.FromArgb(52, 52, 52);
+            btnPsPl.BackColor = Color.FromArgb(52, 52, 52);
+            btnBck.BackColor = Color.FromArgb(52, 52, 52);
+            btnFwd.BackColor = Color.FromArgb(52, 52, 52);
+            btnFullScreen.BackColor = Color.FromArgb(52, 52, 52);
+            button3.BackColor = Color.FromArgb(52, 52, 52);
+            btnRiproduci2.BackColor = Color.FromArgb(52, 52, 52);
+            btnPsPl2.BackColor = Color.FromArgb(52, 52, 52);
+            btnBck2.BackColor = Color.FromArgb(52, 52, 52);
+            btnFw2.BackColor = Color.FromArgb(52, 52, 52);
+
+
+            progBarCircle.BackColor = Color.FromArgb(52, 52, 52);
+            progBarCircle.ProgressColor = Color.FromArgb(214, 74, 97);
+            progBarCircle.InnerColor = Color.FromArgb(52, 52, 52);
+            progBarCircle.OuterColor = Color.FromArgb(52, 52, 52);
+            progBarCircle.ForeColor = Color.FromArgb(214, 74, 97);
+            lblOre.ForeColor = Color.FromArgb(214, 74, 97);
         }
 
         private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
@@ -412,6 +475,31 @@ namespace Multifunction
         private void btnFw2_Click(object sender, EventArgs e)
         {
             _mp3.Position += 0.05f;
+        }
+        public int cont = 0;
+        public int cont2 = 0;
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            progBarCircle.Value += 1;
+            progBarCircle.Text = cont.ToString() + "." + progBarCircle.Value.ToString();
+
+            if (cont == 0)
+            {
+                progBarCircle.Text = progBarCircle.Value.ToString();
+            }
+            if (progBarCircle.Value == 60)
+            {
+                cont++;
+
+                progBarCircle.Value = 0;
+            }
+            if (cont == 60)
+            {
+                cont2++;
+                cont = 0;
+                lblOre.Text += cont2.ToString();
+            }
         }
     }
 }

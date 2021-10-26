@@ -73,9 +73,10 @@ namespace Multifunction
             this.btnRiproduci2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.tabChrono = new System.Windows.Forms.TabPage();
-            this.pnlBack5 = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.progBarCircle = new CircularProgressBar.CircularProgressBar();
+            this.pnlBack5 = new System.Windows.Forms.Panel();
+            this.lblOre = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlMenuLaterale.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -92,6 +93,7 @@ namespace Multifunction
             this.pnlBack4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.tabChrono.SuspendLayout();
+            this.pnlBack5.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenuLaterale
@@ -609,19 +611,6 @@ namespace Multifunction
             this.tabChrono.TabIndex = 3;
             this.tabChrono.Text = "tabChrono";
             // 
-            // pnlBack5
-            // 
-            this.pnlBack5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.pnlBack5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBack5.Location = new System.Drawing.Point(3, 466);
-            this.pnlBack5.Name = "pnlBack5";
-            this.pnlBack5.Size = new System.Drawing.Size(614, 100);
-            this.pnlBack5.TabIndex = 1;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            // 
             // progBarCircle
             // 
             this.progBarCircle.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
@@ -632,8 +621,9 @@ namespace Multifunction
             this.progBarCircle.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.progBarCircle.InnerMargin = 2;
             this.progBarCircle.InnerWidth = -1;
-            this.progBarCircle.Location = new System.Drawing.Point(166, 76);
-            this.progBarCircle.MarqueeAnimationSpeed = 2000;
+            this.progBarCircle.Location = new System.Drawing.Point(80, 0);
+            this.progBarCircle.MarqueeAnimationSpeed = 1000;
+            this.progBarCircle.Maximum = 60;
             this.progBarCircle.Name = "progBarCircle";
             this.progBarCircle.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.progBarCircle.OuterMargin = -25;
@@ -641,8 +631,9 @@ namespace Multifunction
             this.progBarCircle.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(74)))), ((int)(((byte)(97)))));
             this.progBarCircle.ProgressWidth = 25;
             this.progBarCircle.SecondaryFont = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.progBarCircle.Size = new System.Drawing.Size(320, 320);
+            this.progBarCircle.Size = new System.Drawing.Size(465, 465);
             this.progBarCircle.StartAngle = 270;
+            this.progBarCircle.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progBarCircle.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.progBarCircle.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
             this.progBarCircle.SubscriptText = "";
@@ -652,7 +643,34 @@ namespace Multifunction
             this.progBarCircle.TabIndex = 2;
             this.progBarCircle.Text = "sas";
             this.progBarCircle.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.progBarCircle.Value = 68;
+            this.progBarCircle.Value = 60;
+            // 
+            // pnlBack5
+            // 
+            this.pnlBack5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.pnlBack5.Controls.Add(this.lblOre);
+            this.pnlBack5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBack5.Location = new System.Drawing.Point(3, 466);
+            this.pnlBack5.Name = "pnlBack5";
+            this.pnlBack5.Size = new System.Drawing.Size(614, 100);
+            this.pnlBack5.TabIndex = 1;
+            // 
+            // lblOre
+            // 
+            this.lblOre.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblOre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(74)))), ((int)(((byte)(97)))));
+            this.lblOre.Location = new System.Drawing.Point(95, 23);
+            this.lblOre.Name = "lblOre";
+            this.lblOre.Size = new System.Drawing.Size(424, 55);
+            this.lblOre.TabIndex = 5;
+            this.lblOre.Text = "Ore : ";
+            this.lblOre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // Multifunction
             // 
@@ -683,6 +701,7 @@ namespace Multifunction
             this.pnlBack4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.tabChrono.ResumeLayout(false);
+            this.pnlBack5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -740,6 +759,7 @@ namespace Multifunction
         private System.Windows.Forms.Label lblVolume2;
         private System.Windows.Forms.TrackBar trackBar2;
         private CircularProgressBar.CircularProgressBar progBarCircle;
+        private System.Windows.Forms.Label lblOre;
     }
 }
 
