@@ -142,7 +142,7 @@ namespace Multifunction
                     _mp3.Position += 0.01f;
                 }
 
-
+                
 
             }
 
@@ -173,7 +173,7 @@ namespace Multifunction
         {
             tabControl.SelectedIndex = 3;
         }
-        public int durata1 = 0;
+        public float durata1 = 0;
         private void btnPlayMusic_Click(object sender, EventArgs e)
         {
             // apro un openfiledialog in modo che l'utente possa scegliere il file da riprodurre
@@ -404,11 +404,14 @@ namespace Multifunction
             pnlBack2.Visible = false;
             isFullscreen = true;
             pnlMenuLaterale.Visible = false;
+
+
         }
 
         private void btnBck_Click(object sender, EventArgs e)
         {
             _mp.Position -= 0.05f;
+            
         }
 
         private void btnFwd_Click(object sender, EventArgs e)
@@ -434,6 +437,8 @@ namespace Multifunction
             PlayFile(ofd.FileName);
             
             progressBar1.Maximum = (int)_mp.Length / 1000;
+            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -459,6 +464,8 @@ namespace Multifunction
                 _mp3.Play(); // play
                 
             }
+
+            
         }
 
         private void trackBar2_Scroll(object sender, EventArgs e)
@@ -482,7 +489,7 @@ namespace Multifunction
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             progBarCircle.Value += 1;
-            progBarCircle.Text = cont.ToString() + "." + progBarCircle.Value.ToString();
+            progBarCircle.Text = cont.ToString() + ":" + progBarCircle.Value.ToString();
 
             if (cont == 0)
             {
@@ -500,6 +507,8 @@ namespace Multifunction
                 cont = 0;
                 lblOre.Text += cont2.ToString();
             }
+
+            
         }
     }
 }
