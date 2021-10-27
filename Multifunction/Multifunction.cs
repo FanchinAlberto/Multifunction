@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibVLCSharp.Shared;
 using System.Media;
-
+using System.Threading;
+using System.IO;
 
 namespace Multifunction
 {
@@ -20,7 +21,6 @@ namespace Multifunction
         public MediaPlayer _mp;
         public Media media;
 
-
         public LibVLC _libVLC2;
         public MediaPlayer _mp2;
         public Media media2;
@@ -28,7 +28,6 @@ namespace Multifunction
         public LibVLC _libVLC3;
         public MediaPlayer _mp3;
         public Media media3;
-
 
         public bool isFullscreen = false;
         public bool isPlaying = false;
@@ -40,7 +39,6 @@ namespace Multifunction
 
         public string[] nomeMedia = new string[2];
 
-        
         public Multifunction()
         {
             InitializeComponent();
@@ -72,8 +70,6 @@ namespace Multifunction
             progBarCircle.Value = 0;
             progBarCircle.Text = "0";
 
-
-
         }
 
         public void ShortcutEvent(object sender, KeyEventArgs e)
@@ -81,18 +77,18 @@ namespace Multifunction
 
             if (e.KeyCode == Keys.Escape && isFullscreen) // implemento il tasto esc per uscire dal fullscreen
             {
-                this.FormBorderStyle = FormBorderStyle.Sizable; 
+                this.FormBorderStyle = FormBorderStyle.Sizable;
                 this.WindowState = FormWindowState.Normal; // torno alla dimensione precedente
                 this.Size = oldFormSize;
-                
-                videoView1.Size = oldVideoSize; 
-                videoView1.Location = oldVideoLocation; 
+
+                videoView1.Size = oldVideoSize;
+                videoView1.Location = oldVideoLocation;
                 isFullscreen = false;
                 pnlMenuLaterale.Visible = true;
                 pnlBack2.Visible = true;
             }
 
-            if (isPlaying) 
+            if (isPlaying)
             {
                 if (e.KeyCode == Keys.Space) //Implemento la possibilita di stoppare e riprendere la riproduzione con la spacebar
                 {
@@ -114,8 +110,6 @@ namespace Multifunction
                 {
                     _mp.Position += 0.01f;
                 }
-
-                
 
             }
 
@@ -142,11 +136,7 @@ namespace Multifunction
                     _mp3.Position += 0.01f;
                 }
 
-                
-
             }
-
-
 
         }
         private void Multifunction_Load(object sender, EventArgs e)
@@ -161,7 +151,7 @@ namespace Multifunction
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -178,11 +168,9 @@ namespace Multifunction
         {
             // apro un openfiledialog in modo che l'utente possa scegliere il file da riprodurre
 
-            
             ofd.ShowDialog();
 
             nomeMedia[0] = ofd.FileName.ToString();
-
 
         }
 
@@ -203,7 +191,7 @@ namespace Multifunction
             pnlBack2.BackColor = Color.FromArgb(238, 248, 244);
             pnlBack4.BackColor = Color.FromArgb(238, 248, 244);
             pnlBack5.BackColor = Color.FromArgb(238, 248, 244);
-            tabHome.BackColor = Color.FromArgb(203,203,203);
+            tabHome.BackColor = Color.FromArgb(203, 203, 203);
             tabVideo.BackColor = Color.FromArgb(203, 203, 203);
             tabMusica.BackColor = Color.FromArgb(203, 203, 203);
             tabChrono.BackColor = Color.FromArgb(203, 203, 203);
@@ -235,8 +223,6 @@ namespace Multifunction
             btnBck2.BackColor = Color.FromArgb(203, 203, 203);
             btnFw2.BackColor = Color.FromArgb(203, 203, 203);
 
-
-
             progBarCircle.BackColor = Color.FromArgb(203, 203, 203);
             progBarCircle.ProgressColor = Color.FromArgb(41, 181, 158);
             progBarCircle.InnerColor = Color.FromArgb(203, 203, 203);
@@ -255,29 +241,29 @@ namespace Multifunction
         private void btnRosa_Click(object sender, EventArgs e)
         {
             panelBack1.BackColor = Color.FromArgb(59, 2, 31);
-            pnlMenuLaterale.BackColor = Color.FromArgb(59,2,31);
-            pnlBack2.BackColor = Color.FromArgb(59,2,31);
-            pnlBack4.BackColor = Color.FromArgb(59,2,31);
-            pnlBack5.BackColor = Color.FromArgb(59,2,31);
+            pnlMenuLaterale.BackColor = Color.FromArgb(59, 2, 31);
+            pnlBack2.BackColor = Color.FromArgb(59, 2, 31);
+            pnlBack4.BackColor = Color.FromArgb(59, 2, 31);
+            pnlBack5.BackColor = Color.FromArgb(59, 2, 31);
             tabHome.BackColor = Color.FromArgb(158, 73, 116);
-            tabVideo.BackColor = Color.FromArgb( 158,73,116);
-            tabMusica.BackColor = Color.FromArgb( 158,73,116);
-            tabChrono.BackColor = Color.FromArgb( 158,73,116);
-            button1.BackColor = Color.FromArgb( 158,73,116);
-            button2.BackColor = Color.FromArgb( 158,73,116);
-            btnChrono.BackColor = Color.FromArgb( 158,73,116);
-            btnHistory.BackColor = Color.FromArgb( 158,73,116);
-            btnTheme.BackColor = Color.FromArgb( 158,73,116);
-            btnNero.BackColor = Color.FromArgb( 158,73,116);
-            btnBianco.BackColor = Color.FromArgb( 158,73,116);
-            btnRosa.BackColor = Color.FromArgb( 158,73,116);
-            lblProject.ForeColor = Color.FromArgb(0,0,0);
-            lblTitle1.ForeColor = Color.FromArgb(0,0,0);
-            lblTitle2.ForeColor = Color.FromArgb(0,0,0);
+            tabVideo.BackColor = Color.FromArgb(158, 73, 116);
+            tabMusica.BackColor = Color.FromArgb(158, 73, 116);
+            tabChrono.BackColor = Color.FromArgb(158, 73, 116);
+            button1.BackColor = Color.FromArgb(158, 73, 116);
+            button2.BackColor = Color.FromArgb(158, 73, 116);
+            btnChrono.BackColor = Color.FromArgb(158, 73, 116);
+            btnHistory.BackColor = Color.FromArgb(158, 73, 116);
+            btnTheme.BackColor = Color.FromArgb(158, 73, 116);
+            btnNero.BackColor = Color.FromArgb(158, 73, 116);
+            btnBianco.BackColor = Color.FromArgb(158, 73, 116);
+            btnRosa.BackColor = Color.FromArgb(158, 73, 116);
+            lblProject.ForeColor = Color.FromArgb(0, 0, 0);
+            lblTitle1.ForeColor = Color.FromArgb(0, 0, 0);
+            lblTitle2.ForeColor = Color.FromArgb(0, 0, 0);
             ptbLogo.Image = Properties.Resources.logo2;
             pnlLogo.BackgroundImage = Properties.Resources.logo2;
-            this.BackColor = Color.FromArgb(59,2,31);
-            tabControl.BackColor = Color.FromArgb(59,2,31);
+            this.BackColor = Color.FromArgb(59, 2, 31);
+            tabControl.BackColor = Color.FromArgb(59, 2, 31);
 
             btnPlayMusic.BackColor = Color.FromArgb(158, 73, 116);
             btnRiproduci.BackColor = Color.FromArgb(158, 73, 116);
@@ -292,42 +278,41 @@ namespace Multifunction
             btnFw2.BackColor = Color.FromArgb(158, 73, 116);
 
             progBarCircle.BackColor = Color.FromArgb(158, 73, 116);
-            progBarCircle.ProgressColor = Color.FromArgb(0,0,0);
+            progBarCircle.ProgressColor = Color.FromArgb(0, 0, 0);
             progBarCircle.InnerColor = Color.FromArgb(158, 73, 116);
             progBarCircle.OuterColor = Color.FromArgb(158, 73, 116);
-            progBarCircle.ForeColor = Color.FromArgb(0,0,0);
-            lblOre.ForeColor = Color.FromArgb(0,0,0);
+            progBarCircle.ForeColor = Color.FromArgb(0, 0, 0);
+            lblOre.ForeColor = Color.FromArgb(0, 0, 0);
         }
 
         private void btnNero_Click(object sender, EventArgs e)
         {
             panelBack1.BackColor = Color.FromArgb(11, 7, 17);
-            pnlMenuLaterale.BackColor = Color.FromArgb(11,7,17);
-            pnlBack2.BackColor = Color.FromArgb(11,7,17);
-            pnlBack4.BackColor = Color.FromArgb(11,7,17);
-            pnlBack5.BackColor = Color.FromArgb(11,7,17);
+            pnlMenuLaterale.BackColor = Color.FromArgb(11, 7, 17);
+            pnlBack2.BackColor = Color.FromArgb(11, 7, 17);
+            pnlBack4.BackColor = Color.FromArgb(11, 7, 17);
+            pnlBack5.BackColor = Color.FromArgb(11, 7, 17);
             tabHome.BackColor = Color.FromArgb(52, 52, 52);
-            tabVideo.BackColor = Color.FromArgb(52,52,52);
-            tabMusica.BackColor = Color.FromArgb(52,52,52);
-            tabChrono.BackColor = Color.FromArgb(52,52,52);
-            button1.BackColor = Color.FromArgb(52,52,52);
-            button2.BackColor = Color.FromArgb(52,52,52);
-            btnChrono.BackColor = Color.FromArgb(52,52,52);
-            btnHistory.BackColor = Color.FromArgb(52,52,52);
-            btnTheme.BackColor = Color.FromArgb(52,52,52);
-            btnNero.BackColor = Color.FromArgb(52,52,52);
-            btnBianco.BackColor = Color.FromArgb(52,52,52);
-            btnRosa.BackColor = Color.FromArgb(52,52,52);
+            tabVideo.BackColor = Color.FromArgb(52, 52, 52);
+            tabMusica.BackColor = Color.FromArgb(52, 52, 52);
+            tabChrono.BackColor = Color.FromArgb(52, 52, 52);
+            button1.BackColor = Color.FromArgb(52, 52, 52);
+            button2.BackColor = Color.FromArgb(52, 52, 52);
+            btnChrono.BackColor = Color.FromArgb(52, 52, 52);
+            btnHistory.BackColor = Color.FromArgb(52, 52, 52);
+            btnTheme.BackColor = Color.FromArgb(52, 52, 52);
+            btnNero.BackColor = Color.FromArgb(52, 52, 52);
+            btnBianco.BackColor = Color.FromArgb(52, 52, 52);
+            btnRosa.BackColor = Color.FromArgb(52, 52, 52);
             lblProject.ForeColor = Color.FromArgb(214, 74, 97);
             lblTitle1.ForeColor = Color.FromArgb(214, 74, 97);
             lblTitle2.ForeColor = Color.FromArgb(214, 74, 97);
             ptbLogo.Image = Properties.Resources.logo;
             pnlLogo.BackgroundImage = Properties.Resources.logo;
-            this.BackColor = Color.FromArgb(11,7,17);
-            tabControl.BackColor = Color.FromArgb(11,7,17);
+            this.BackColor = Color.FromArgb(11, 7, 17);
+            tabControl.BackColor = Color.FromArgb(11, 7, 17);
 
-
-            btnPlayMusic.BackColor = Color.FromArgb(52,52,52);
+            btnPlayMusic.BackColor = Color.FromArgb(52, 52, 52);
             btnRiproduci.BackColor = Color.FromArgb(52, 52, 52);
             btnPsPl.BackColor = Color.FromArgb(52, 52, 52);
             btnBck.BackColor = Color.FromArgb(52, 52, 52);
@@ -338,7 +323,6 @@ namespace Multifunction
             btnPsPl2.BackColor = Color.FromArgb(52, 52, 52);
             btnBck2.BackColor = Color.FromArgb(52, 52, 52);
             btnFw2.BackColor = Color.FromArgb(52, 52, 52);
-
 
             progBarCircle.BackColor = Color.FromArgb(52, 52, 52);
             progBarCircle.ProgressColor = Color.FromArgb(214, 74, 97);
@@ -355,7 +339,7 @@ namespace Multifunction
 
         private void btnScegliFile_Click(object sender, ToolStripItemClickedEventArgs e)
         {
-           
+
         }
 
         public void PlayFile(string file)
@@ -366,7 +350,7 @@ namespace Multifunction
         public void PlayFile2(string file)
         {
             _mp3.Play(new Media(_libVLC3, file));
-            
+
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -380,21 +364,20 @@ namespace Multifunction
             if (_mp.State == VLCState.Playing) // if is playing
             {
                 _mp.Pause(); // pause
-                
+
             }
             else // it's not playing?
             {
                 _mp.Play(); // play
-                
-            }
 
+            }
 
         }
 
         private void btnFullScreen_Click(object sender, EventArgs e)
         {
-           
-             // make video the same size as the form
+
+            // make video the same size as the form
             videoView1.Location = new Point(0, 0); // remove the offset
             this.FormBorderStyle = FormBorderStyle.None; // change form style
             this.WindowState = FormWindowState.Maximized;
@@ -405,19 +388,18 @@ namespace Multifunction
             isFullscreen = true;
             pnlMenuLaterale.Visible = false;
 
-
         }
 
         private void btnBck_Click(object sender, EventArgs e)
         {
             _mp.Position -= 0.05f;
-            
+
         }
 
         private void btnFwd_Click(object sender, EventArgs e)
         {
             _mp.Position += 0.05f;
-            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -435,9 +417,12 @@ namespace Multifunction
         private void btnRiproduci_Click(object sender, EventArgs e)
         {
             PlayFile(ofd.FileName);
-            
+            Thread.Sleep(100);
+            SaveToArray();
+            File.WriteAllLines(@"..\..\Multi-History.txt", nomeMedia);
+
+
             progressBar1.Maximum = (int)_mp.Length / 1000;
-            
 
         }
 
@@ -457,15 +442,14 @@ namespace Multifunction
             if (_mp3.State == VLCState.Playing) // if is playing
             {
                 _mp3.Pause(); // pause
-                
+
             }
             else // it's not playing?
             {
                 _mp3.Play(); // play
-                
+
             }
 
-            
         }
 
         private void trackBar2_Scroll(object sender, EventArgs e)
@@ -508,7 +492,23 @@ namespace Multifunction
                 lblOre.Text += cont2.ToString();
             }
 
+        }
+
+        private void SaveToArray()
+        {
+            durata1 = _mp.Length / 1000;
+            durata1 /= 60;
+            nomeMedia[0] = ofd.FileName;
+            nomeMedia[1] = durata1.ToString();
+            MessageBox.Show(nomeMedia[0]);
+            MessageBox.Show(nomeMedia[1]);
+        }
+
+        private void SaveToFile()
+        {
             
         }
+
+        
     }
 }

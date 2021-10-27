@@ -76,6 +76,10 @@ namespace Multifunction
             this.progBarCircle = new CircularProgressBar.CircularProgressBar();
             this.pnlBack5 = new System.Windows.Forms.Panel();
             this.lblOre = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnStrpPausa = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnStrpRiprendi = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnStrpClose = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlMenuLaterale.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -94,6 +98,7 @@ namespace Multifunction
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.tabChrono.SuspendLayout();
             this.pnlBack5.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenuLaterale
@@ -604,6 +609,7 @@ namespace Multifunction
             this.tabChrono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.tabChrono.Controls.Add(this.progBarCircle);
             this.tabChrono.Controls.Add(this.pnlBack5);
+            this.tabChrono.Controls.Add(this.menuStrip1);
             this.tabChrono.Location = new System.Drawing.Point(4, 24);
             this.tabChrono.Name = "tabChrono";
             this.tabChrono.Padding = new System.Windows.Forms.Padding(3);
@@ -621,7 +627,7 @@ namespace Multifunction
             this.progBarCircle.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.progBarCircle.InnerMargin = 2;
             this.progBarCircle.InnerWidth = -1;
-            this.progBarCircle.Location = new System.Drawing.Point(80, 0);
+            this.progBarCircle.Location = new System.Drawing.Point(98, 30);
             this.progBarCircle.MarqueeAnimationSpeed = 1000;
             this.progBarCircle.Maximum = 60;
             this.progBarCircle.Name = "progBarCircle";
@@ -631,7 +637,7 @@ namespace Multifunction
             this.progBarCircle.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(74)))), ((int)(((byte)(97)))));
             this.progBarCircle.ProgressWidth = 25;
             this.progBarCircle.SecondaryFont = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.progBarCircle.Size = new System.Drawing.Size(465, 465);
+            this.progBarCircle.Size = new System.Drawing.Size(435, 435);
             this.progBarCircle.StartAngle = 270;
             this.progBarCircle.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progBarCircle.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
@@ -641,7 +647,7 @@ namespace Multifunction
             this.progBarCircle.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
             this.progBarCircle.SuperscriptText = "";
             this.progBarCircle.TabIndex = 2;
-            this.progBarCircle.Text = "sas";
+            this.progBarCircle.Text = "60";
             this.progBarCircle.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.progBarCircle.Value = 60;
             // 
@@ -666,6 +672,42 @@ namespace Multifunction
             this.lblOre.Text = "Ore : ";
             this.lblOre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnStrpPausa,
+            this.mnStrpRiprendi,
+            this.mnStrpClose});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(614, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // mnStrpPausa
+            // 
+            this.mnStrpPausa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            this.mnStrpPausa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(74)))), ((int)(((byte)(97)))));
+            this.mnStrpPausa.Name = "mnStrpPausa";
+            this.mnStrpPausa.Size = new System.Drawing.Size(50, 20);
+            this.mnStrpPausa.Text = "Pausa";
+            // 
+            // mnStrpRiprendi
+            // 
+            this.mnStrpRiprendi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(74)))), ((int)(((byte)(97)))));
+            this.mnStrpRiprendi.Name = "mnStrpRiprendi";
+            this.mnStrpRiprendi.Size = new System.Drawing.Size(63, 20);
+            this.mnStrpRiprendi.Text = "Riprendi";
+            // 
+            // mnStrpClose
+            // 
+            this.mnStrpClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(74)))), ((int)(((byte)(97)))));
+            this.mnStrpClose.Name = "mnStrpClose";
+            this.mnStrpClose.Size = new System.Drawing.Size(79, 20);
+            this.mnStrpClose.Text = "Chiudi App";
+            // 
             // timer1
             // 
             this.timer1.Enabled = true;
@@ -680,6 +722,7 @@ namespace Multifunction
             this.ClientSize = new System.Drawing.Size(857, 596);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlMenuLaterale);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Multifunction";
             this.Text = "Multifunction";
             this.Load += new System.EventHandler(this.Multifunction_Load);
@@ -701,7 +744,10 @@ namespace Multifunction
             this.pnlBack4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.tabChrono.ResumeLayout(false);
+            this.tabChrono.PerformLayout();
             this.pnlBack5.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -760,6 +806,10 @@ namespace Multifunction
         private System.Windows.Forms.TrackBar trackBar2;
         private CircularProgressBar.CircularProgressBar progBarCircle;
         private System.Windows.Forms.Label lblOre;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnStrpPausa;
+        private System.Windows.Forms.ToolStripMenuItem mnStrpRiprendi;
+        private System.Windows.Forms.ToolStripMenuItem mnStrpClose;
     }
 }
 
